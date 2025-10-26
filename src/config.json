@@ -1,0 +1,266 @@
+{
+    "rolesWhitelist": [
+        "Staff",
+        "Archive Curator"
+    ],
+    "logChannel": "archive-log",
+    "defaultEmoji": "llamaengineer",
+    "channels": {
+        "Archives": [
+            {
+                "name": "resources",
+                "display_name": "Resources",
+                "tags": [
+                    "Compilation",
+                    "Testing Setup",
+                    "Mod",
+                    "Website"
+                ]
+            },
+            {
+                "name": "tools",
+                "display_name": "Tools",
+                "tags": [
+                    "Scarpet Script",
+                    "Website"
+                ]
+            },
+            {
+                "name": "item-layouts",
+                "display_name": "Item Layouts",
+                "tags": [
+                    "1.21.9",
+                    "1.21.6",
+                    "1.21.5",
+                    "1.21.4",
+                    "1.21",
+                    "1.20",
+                    "1.19"
+                ]
+            },
+            {
+                "name": "storage-systems",
+                "display_name": "Storage Systems",
+                "tags": [
+                    "Main Storage",
+                    "Digsort"
+                ]
+            },
+            {
+                "name": "box-loaders",
+                "display_name": "Box Loaders",
+                "tags": [
+                    "1x",
+                    "2x",
+                    "4x",
+                    "6x",
+                    "8x",
+                    "Single Item",
+                    "Mixed",
+                    "Slice-preserving",
+                    "Full Speed",
+                    "Non-tileable",
+                    "Hybrid Loader",
+                    "Accessible Loader"
+                ]
+            },
+            {
+                "name": "box-unloaders",
+                "display_name": "Box Unloaders",
+                "tags": [
+                    "1x",
+                    "2x",
+                    "4x",
+                    "Cart Stack Unloader",
+                    "Box Yeeter",
+                    "Non-tileable",
+                    "Full Speed",
+                    "Empty Box Compatible"
+                ]
+            },
+            {
+                "name": "box-sorters",
+                "display_name": "Box Sorters",
+                "tags": [
+                    "Box Sorter",
+                    "SVAR",
+                    "Multi Box Sorter",
+                    "Fully Hopperlocked"
+                ]
+            },
+            {
+                "name": "box-displays",
+                "display_name": "Box Displays",
+                "tags": [
+                    "Smart",
+                    "Bufferless",
+                    "Default Extended",
+                    "Auto Initial Placing",
+                    "Restock Station",
+                    "Floor",
+                    "Wall",
+                    "Ceiling",
+                    "No Collection"
+                ]
+            },
+            {
+                "name": "box-processors",
+                "display_name": "Box Processors",
+                "tags": [
+                    "Blacklister",
+                    "Whitelister",
+                    "Fill Level Sorter",
+                    "Box Sorter Input",
+                    "Box Color Sorter",
+                    "Box Comparer",
+                    "Box Merger",
+                    "Box Stacker",
+                    "Keygen",
+                    "Tileable"
+                ]
+            },
+            {
+                "name": "item-transport",
+                "display_name": "Item Transport",
+                "tags": [
+                    "Water Stream",
+                    "Dropper Line",
+                    "Dropper Elevator",
+                    "Item Aligner",
+                    "Hopper Speed",
+                    "Double Hopper Speed",
+                    "Instant"
+                ]
+            },
+            {
+                "name": "chest-halls",
+                "display_name": "Chest Halls",
+                "tags": [
+                    "8 Item",
+                    "10 Item",
+                    "SS3 Filter",
+                    "SSI Filter",
+                    "1 Double Chest",
+                    "2 Double Chests",
+                    "No Prefilling",
+                    "Fully Hopperlocked"
+                ]
+            },
+            {
+                "name": "display-halls",
+                "display_name": "Display Halls",
+                "tags": [
+                    "Accessible Loaders",
+                    "Hybrid Loaders",
+                    "Callable Loaders",
+                    "1x",
+                    "2x"
+                ]
+            },
+            {
+                "name": "bulk-storages",
+                "display_name": "Bulk Storages",
+                "tags": [
+                    "Expandable"
+                ]
+            },
+            {
+                "name": "multi-item-sorters",
+                "display_name": "Multi Item Sorters",
+                "tags": [
+                    "Slot Reservation",
+                    "Slot Allocation",
+                    "Cart-based",
+                    "Silent"
+                ]
+            },
+            {
+                "name": "fixed-item-sorting",
+                "display_name": "Fixed Item Sorting",
+                "tags": [
+                    "Item Filter",
+                    "Sequential Unloader"
+                ]
+            },
+            {
+                "name": "parallel-processing",
+                "display_name": "Parallel Processing",
+                "tags": [
+                    "Fully Parallel",
+                    "Partially Parallel",
+                    "Scalable",
+                    "Not Scalable"
+                ]
+            },
+            {
+                "name": "variable-item-sorting",
+                "display_name": "Variable Item Sorting",
+                "tags": [
+                    "Variable Item Filter",
+                    "Cyclical Var Sorter",
+                    "Box Splitter"
+                ]
+            },
+            {
+                "name": "unstackable-sorting",
+                "display_name": "Unstackable Sorting",
+                "tags": [
+                    "Full System",
+                    "Concept",
+                    "Shulker Box",
+                    "Minecart",
+                    "Boat",
+                    "Bucket",
+                    "Potion",
+                    "Armor",
+                    "Book",
+                    "Flint and Steel",
+                    "Shears",
+                    "Brush"
+                ]
+            },
+            {
+                "name": "stack-sep-sorting",
+                "display_name": "Stack Separation Sorting",
+                "tags": [
+                    "4gt",
+                    "8gt"
+                ]
+            },
+            {
+                "name": "inputs",
+                "display_name": "Interfaces",
+                "tags": [
+                    "Main Input",
+                    "In-floor Input",
+                    "Cart Yeeting Input",
+                    "Bulk Input Included"
+                ]
+            },
+            {
+                "name": "peripherals",
+                "display_name": "Peripherals",
+                "tags": [
+                    "Crafting Station",
+                    "Yeeting Station",
+                    "Crafting System",
+                    "Brewer",
+                    "Smelter"
+                ]
+            },
+            {
+                "name": "miscellaneous",
+                "display_name": "Miscellaneous",
+                "tags": []
+            }
+        ]
+    },
+    "discordServers": {
+        "Storage Tech": "https://discord.gg/JufJ6uf",
+        "Bedrock Storage Tech": "https://discord.gg/RaEWYeU",
+        "TMC Catalogue": "https://discord.gg/tvpccRczWx",
+        "Autocrafting Archive": "https://discord.gg/guZdbQ9KQe",
+        "Cartchives": "https://discord.gg/8nGNTewveC",
+        "MTDR": "https://discord.gg/UT8ns46As9"
+    }
+}
