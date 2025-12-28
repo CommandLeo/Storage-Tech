@@ -1,5 +1,5 @@
 import { z } from "zod";
-import config from "../config.json";
+import config from "../config/config.json";
 
 const channelSchema = z.object({
   name: z.string().min(1, "Channel name is required"),
