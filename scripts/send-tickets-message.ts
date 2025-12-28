@@ -7,7 +7,7 @@ import { ButtonStyle, ComponentType, MessageFlags } from "@discordjs/core/http-o
 validateEnv();
 
 async function sendTicketsMessage(channel_id: string) {
-  await discordApi.channels.createMessage(channel_id, {
+  return await discordApi.channels.createMessage(channel_id, {
     components: [
       {
         type: ComponentType.TextDisplay,

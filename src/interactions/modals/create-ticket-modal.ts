@@ -36,6 +36,7 @@ const modal: ModalExecutor = {
       invitable: false,
     });
     await discordApi.threads.addMember(ticketThread.id, interaction.member.user.id);
+
     if (STAFF_ROLE_ID) {
       discordApi.channels.createMessage(ticketThread.id, { content: "@Staff" }).then(message => {
         discordApi.channels.editMessage(message.channel_id, message.id, { content: roleMention(STAFF_ROLE_ID) });

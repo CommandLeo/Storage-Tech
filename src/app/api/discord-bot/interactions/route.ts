@@ -1,9 +1,9 @@
 import { type NextRequest } from "next/server";
 import {
-  APIApplicationCommandAutocompleteInteraction,
-  APIApplicationCommandInteraction,
-  APIMessageComponentInteraction,
-  APIModalSubmitInteraction,
+  type APIApplicationCommandAutocompleteInteraction,
+  type APIApplicationCommandInteraction,
+  type APIMessageComponentInteraction,
+  type APIModalSubmitInteraction,
   InteractionResponseType,
   InteractionType,
   MessageFlags,
