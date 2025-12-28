@@ -6,15 +6,24 @@
     "logChannel": "archive-log",
     "defaultEmoji": "llamaengineer",
     "channels": {
-        "Archives": [
+        "Archive - Main": [
+            {
+                "name": "storage-systems",
+                "display_name": "Storage Systems",
+                "tags": [
+                    "Main Storage",
+                    "Digsort"
+                ]
+            },
             {
                 "name": "resources",
                 "display_name": "Resources",
                 "tags": [
+                    "Game Mechanics",
                     "Compilation",
+                    "Website",
                     "Testing Setup",
-                    "Mod",
-                    "Website"
+                    "Lag Test"
                 ]
             },
             {
@@ -22,7 +31,9 @@
                 "display_name": "Tools",
                 "tags": [
                     "Scarpet Script",
-                    "Website"
+                    "Mod",
+                    "Website",
+                    "Program"
                 ]
             },
             {
@@ -37,15 +48,9 @@
                     "1.20",
                     "1.19"
                 ]
-            },
-            {
-                "name": "storage-systems",
-                "display_name": "Storage Systems",
-                "tags": [
-                    "Main Storage",
-                    "Digsort"
-                ]
-            },
+            }
+        ],
+        "Archive - Fundamentals": [
             {
                 "name": "box-loaders",
                 "display_name": "Box Loaders",
@@ -131,7 +136,9 @@
                     "Double Hopper Speed",
                     "Instant"
                 ]
-            },
+            }
+        ],
+        "Archive - Storage Units": [
             {
                 "name": "chest-halls",
                 "display_name": "Chest Halls",
@@ -161,9 +168,15 @@
                 "name": "bulk-storages",
                 "display_name": "Bulk Storages",
                 "tags": [
-                    "Expandable"
+                    "Dual Bulk",
+                    "Quad Bulk",
+                    "Smart Restock",
+                    "Fully Hopperlocked",
+                    "Storage Slice"
                 ]
-            },
+            }
+        ],
+        "Archive - Sorting Tech": [
             {
                 "name": "multi-item-sorters",
                 "display_name": "Multi Item Sorters",
@@ -226,10 +239,12 @@
                     "4gt",
                     "8gt"
                 ]
-            },
+            }
+        ],
+        "Archive - Other": [
             {
                 "name": "inputs",
-                "display_name": "Interfaces",
+                "display_name": "Inputs",
                 "tags": [
                     "Main Input",
                     "In-floor Input",
@@ -261,6 +276,8 @@
         "TMC Catalogue": "https://discord.gg/tvpccRczWx",
         "Autocrafting Archive": "https://discord.gg/guZdbQ9KQe",
         "Cartchives": "https://discord.gg/8nGNTewveC",
+        "TNT Archive": "https://discord.gg/vPyUBcdmZV",
+        "Slimestone Tech Archive": "https://discord.gg/QQX5RBaHzK",
         "MTDR": "https://discord.gg/UT8ns46As9"
     }
 }
