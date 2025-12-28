@@ -1,14 +1,5 @@
-import {
-  InteractionResponseType,
-  type APIInteractionResponse,
-  type APIApplicationCommandInteraction,
-  type RESTPostAPIChatInputApplicationCommandsJSONBody,
-} from "@discordjs/core/http-only";
-
-interface Command {
-  data: RESTPostAPIChatInputApplicationCommandsJSONBody;
-  execute: (interaction: APIApplicationCommandInteraction) => Promise<APIInteractionResponse>;
-}
+import { InteractionResponseType } from "@discordjs/core/http-only";
+import { Command } from "@/interfaces";
 
 const command: Command = {
   data: {

@@ -2,11 +2,28 @@ import type {
   RESTPostAPIChatInputApplicationCommandsJSONBody,
   APIApplicationCommandInteraction,
   APIInteractionResponse,
+  APIMessageComponentInteraction,
+  APIModalSubmitInteraction,
+  APIApplicationCommandAutocompleteInteraction,
+  APIApplicationCommandAutocompleteResponse,
 } from "@discordjs/core/http-only";
 
 export interface Command {
   data: RESTPostAPIChatInputApplicationCommandsJSONBody;
-  execute: (interaction: APIApplicationCommandInteraction) => Promise<APIInteractionResponse>;
+  execute: (interaction: APIApplicationCommandInteraction) => Promise<APIInteractionResponse | null>;
+  autocomplete?: (
+    interaction: APIApplicationCommandAutocompleteInteraction
+  ) => Promise<APIApplicationCommandAutocompleteResponse>;
+}
+
+export interface MessageComponentExecutor {
+  custom_id: string;
+  execute: (interaction: APIMessageComponentInteraction) => Promise<APIInteractionResponse | null>;
+}
+
+export interface ModalExecutor {
+  custom_id: string;
+  execute: (interaction: APIModalSubmitInteraction) => Promise<APIInteractionResponse | null>;
 }
 
 export interface ChannelInfo {
