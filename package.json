@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "commands:register": "tsx scripts/register-commands.ts",
+    "commands:register": "tsx scripts/manage-commands.ts register",
     "commands:list": "tsx scripts/manage-commands.ts list",
     "commands:clear": "tsx scripts/manage-commands.ts clear",
     "setup-archive": "tsx scripts/setup-archive.ts",
