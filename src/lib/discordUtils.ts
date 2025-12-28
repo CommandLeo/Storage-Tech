@@ -4,6 +4,12 @@ import config from "@/lib/config";
 
 const guildId = process.env.GUILD_ID;
 
+export async function getRoleIdByName(roleName: string) {
+  const guildRoles = await discordApi.guilds.getRoles(guildId);
+  const role = guildRoles.find(r => r.name === roleName);
+  return role ? role.id : null;
+}
+
 export async function hasWhitelistedRole(discordId: string) {
   const rolesWhitelist = config.rolesWhitelist;
 
