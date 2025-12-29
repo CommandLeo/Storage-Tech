@@ -4,8 +4,6 @@ import { getRoleIdByName } from "@/lib/discordUtils";
 import discordApi from "@/lib/discordApi";
 import type { ModalExecutor } from "@/interfaces";
 
-const STAFF_ROLE_ID = await getRoleIdByName("Staff");
-
 const modal: ModalExecutor = {
   custom_id: "create-ticket-modal",
   async execute(interaction) {
@@ -24,6 +22,7 @@ const modal: ModalExecutor = {
 
     await discordApi.threads.addMember(ticketThread.id, interaction.member.user.id);
 
+    const STAFF_ROLE_ID = await getRoleIdByName("Staff");
     if (STAFF_ROLE_ID) {
       const introductionContent = "@Staff has been notified of your ticket.";
       const message = await discordApi.channels.createMessage(ticketThread.id, { content: introductionContent });
