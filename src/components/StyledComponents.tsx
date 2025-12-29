@@ -181,7 +181,7 @@ export const NavExternalButton = styled(Button)<ButtonProps & AnchorHTMLAttribut
 
 // Hero Section with Gradient Background
 export const HeroSection = styled(Box)(({ theme }) => ({
-  background: "linear-gradient(135deg, #1e1e2e 0%, #252538 100%)",
+  background: "linear-gradient(135deg, #1a1a1a 0%, #212121 100%)",
   position: "relative",
   overflow: "hidden",
   "&::before": {
