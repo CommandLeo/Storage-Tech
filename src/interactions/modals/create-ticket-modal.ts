@@ -1,7 +1,6 @@
-import { ComponentType, InteractionResponseType, MessageFlags } from "@discordjs/core/http-only";
+import { MessageFlags } from "@discordjs/core/http-only";
 import { channelLink, roleMention } from "@discordjs/formatters";
 import { getRoleIdByName } from "@/lib/discordUtils";
-import { confirmationText } from "../message-components/create-ticket-button";
 import discordApi from "@/lib/discordApi";
 import type { ModalExecutor } from "@/interfaces";
 
@@ -13,43 +12,27 @@ const modal: ModalExecutor = {
     if (!interaction.channel) throw new Error("Interaction channel is undefined");
     if (!interaction.member) throw new Error("Interaction member is undefined");
 
-    const components = interaction.data.components.flatMap(row =>
-      row.type == ComponentType.ActionRow ? row.components : []
-    );
-
-    const confirmationTextInput = components.find(
-      c => c.type === ComponentType.TextInput && c.custom_id === "ticket_modal_confirmation"
-    );
-
-    if (!confirmationTextInput || confirmationTextInput.value.trim() !== confirmationText) {
-      return {
-        type: InteractionResponseType.ChannelMessageWithSource,
-        data: {
-          content: "Wrong confirmation text. Ticket creation cancelled.",
-          flags: MessageFlags.Ephemeral,
-        },
-      };
-    }
-
     const ticketThread = await discordApi.channels.createThread(interaction.channel.id, {
       name: `ticket-${interaction.member.user.username}`,
       invitable: false,
     });
+
+    await discordApi.interactions.reply(interaction.id, interaction.token, {
+      content: `Ticket created: ${channelLink(ticketThread.id)}`,
+      flags: MessageFlags.Ephemeral,
+    });
+
     await discordApi.threads.addMember(ticketThread.id, interaction.member.user.id);
 
     if (STAFF_ROLE_ID) {
-      discordApi.channels.createMessage(ticketThread.id, { content: "@Staff" }).then(message => {
-        discordApi.channels.editMessage(message.channel_id, message.id, { content: roleMention(STAFF_ROLE_ID) });
+      const introductionContent = "@Staff has been notified of your ticket.";
+      const message = await discordApi.channels.createMessage(ticketThread.id, { content: introductionContent });
+      await discordApi.channels.editMessage(message.channel_id, message.id, {
+        content: introductionContent.replace("@Staff", roleMention(STAFF_ROLE_ID)),
       });
     }
 
-    return {
-      type: InteractionResponseType.ChannelMessageWithSource,
-      data: {
-        content: `Ticket created: ${channelLink(ticketThread.id)}`,
-        flags: MessageFlags.Ephemeral,
-      },
-    };
+    return null;
   },
 };
 
