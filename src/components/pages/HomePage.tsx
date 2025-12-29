@@ -1,7 +1,6 @@
 "use client";
 
-import { Box, Container, Fade, Typography, Card, CardContent } from "@mui/material";
-import Grid from '@mui/material/Grid2';
+import { Box, Container, Fade, Typography, Grid, Card, CardContent } from "@mui/material";
 import { HeroTitle, HeroSubtitle, MainHeroSection } from "@/components/StyledComponents";
 import { Storage, Build, Speed, Security } from "@mui/icons-material";
 

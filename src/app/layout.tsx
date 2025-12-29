@@ -1,13 +1,10 @@
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import { Box, CssBaseline, ThemeProvider } from "@mui/material";
-import { Inter } from "next/font/google";
 import { SessionProvider } from "next-auth/react";
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import theme from "@/lib/theme";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Storage Tech",
@@ -19,8 +16,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={inter.className} suppressHydrationWarning>
-      <body>
+    <html lang="en" suppressHydrationWarning>
+      <body style={{ fontFamily: '"Inter", "Roboto", "Helvetica", "Arial", sans-serif' }}>
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
             <CssBaseline />
