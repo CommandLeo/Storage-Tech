@@ -8,37 +8,13 @@ import {
   InteractionType,
   MessageFlags,
 } from "@discordjs/core/http-only";
-
-// Force dynamic rendering to prevent Next.js from statically analyzing Discord imports during build
-// This avoids network calls to discord.com when the discord-interactions package is loaded
-export const dynamic = 'force-dynamic';
-export const runtime = 'nodejs';
-
-// Lazy load dependencies to prevent module-level execution during build time
-// The discord-interactions package makes network requests on import, which causes build failures
-const getVerifyDiscordRequest = async () => {
-  const mod = await import("@/lib/verifyDiscordRequest");
-  return mod.default;
-};
-
-const getCommands = async () => {
-  const mod = await import("@/interactions/commands");
-  return mod.commands;
-};
-
-const getMessageComponents = async () => {
-  const mod = await import("@/interactions/message-components");
-  return mod.messageComponents;
-};
-
-const getModals = async () => {
-  const mod = await import("@/interactions/modals");
-  return mod.modals;
-};
+import verifyDiscordRequest from "@/lib/verifyDiscordRequest";
+import { commands } from "@/interactions/commands";
+import { messageComponents } from "@/interactions/message-components";
+import { modals } from "@/interactions/modals";
 
 async function handleApplicationCommandInteraction(interaction: APIApplicationCommandInteraction) {
   try {
-    const commands = await getCommands();
     const commandName = interaction.data?.name?.toLowerCase();
     const command = commands.find(cmd => cmd.data.name.toLowerCase() === commandName);
 
@@ -79,7 +55,6 @@ async function handleApplicationCommandInteraction(interaction: APIApplicationCo
 
 async function handleMessageComponentInteraction(interaction: APIMessageComponentInteraction) {
   try {
-    const messageComponents = await getMessageComponents();
     const customId = interaction.data.custom_id;
     const component = messageComponents.find(comp => comp.custom_id === customId);
 
@@ -122,7 +97,6 @@ async function handleApplicationCommandAutocompleteInteraction(
   interaction: APIApplicationCommandAutocompleteInteraction
 ) {
   try {
-    const commands = await getCommands();
     const commandName = interaction.data?.name?.toLowerCase();
     const command = commands.find(cmd => cmd.data.name.toLowerCase() === commandName);
 
@@ -143,7 +117,6 @@ async function handleApplicationCommandAutocompleteInteraction(
 
 async function handleModalSubmitInteraction(interaction: APIModalSubmitInteraction) {
   try {
-    const modals = await getModals();
     const customId = interaction.data.custom_id;
     const modal = modals.find(m => m.custom_id === customId);
 
@@ -183,7 +156,6 @@ async function handleModalSubmitInteraction(interaction: APIModalSubmitInteracti
 }
 
 export async function POST(request: NextRequest) {
-  const verifyDiscordRequest = await getVerifyDiscordRequest();
   const { isValid, interaction } = await verifyDiscordRequest(request);
   if (!isValid || !interaction) {
     return Response.json({ error: "Bad request signature." }, { status: 401 });
