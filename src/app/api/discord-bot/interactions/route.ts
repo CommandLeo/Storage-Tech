@@ -9,11 +9,13 @@ import {
   MessageFlags,
 } from "@discordjs/core/http-only";
 
-// Force dynamic rendering to avoid build-time execution
+// Force dynamic rendering to prevent Next.js from statically analyzing Discord imports during build
+// This avoids network calls to discord.com when the discord-interactions package is loaded
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
 
-// Lazy load dependencies to avoid build-time issues
+// Lazy load dependencies to prevent module-level execution during build time
+// The discord-interactions package makes network requests on import, which causes build failures
 const getVerifyDiscordRequest = async () => {
   const mod = await import("@/lib/verifyDiscordRequest");
   return mod.default;
