@@ -343,6 +343,7 @@ function HomePage() {
                   component={Link}
                   href="/discord"
                   target="_blank"
+                  rel="noopener noreferrer"
                   variant="outlined"
                   size="large"
                   color="primary"
