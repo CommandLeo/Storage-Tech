@@ -1,6 +1,7 @@
 "use client";
 
-import { Box, Container, Fade, Typography, Grid, Card, CardContent } from "@mui/material";
+import { Box, Container, Fade, Typography, Card, CardContent } from "@mui/material";
+import Grid from '@mui/material/Grid2';
 import { HeroTitle, HeroSubtitle, MainHeroSection } from "@/components/StyledComponents";
 import { Storage, Build, Speed, Security } from "@mui/icons-material";
 
@@ -57,7 +58,7 @@ function HomePage() {
           
           <Grid container spacing={4}>
             {features.map((feature, index) => (
-              <Grid item xs={12} sm={6} md={3} key={index}>
+              <Grid size={{ xs: 12, sm: 6, md: 3 }} key={index}>
                 <Fade in timeout={800 + index * 100}>
                   <Card
                     sx={{
