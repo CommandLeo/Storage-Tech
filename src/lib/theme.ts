@@ -1,5 +1,5 @@
 "use client";
-import { createTheme } from "@mui/material/styles";
+import { createTheme, alpha } from "@mui/material/styles";
 import { purple, grey, red, orange, green, common } from "@mui/material/colors";
 
 const theme = createTheme({
@@ -49,8 +49,8 @@ const theme = createTheme({
     },
     divider: grey[800],
     action: {
-      hover: `rgba(${parseInt(purple[600].slice(1, 3), 16)}, ${parseInt(purple[600].slice(3, 5), 16)}, ${parseInt(purple[600].slice(5, 7), 16)}, 0.08)`,
-      selected: `rgba(${parseInt(purple[600].slice(1, 3), 16)}, ${parseInt(purple[600].slice(3, 5), 16)}, ${parseInt(purple[600].slice(5, 7), 16)}, 0.12)`,
+      hover: alpha(purple[600], 0.08),
+      selected: alpha(purple[600], 0.12),
       disabled: "rgba(255, 255, 255, 0.26)",
       disabledBackground: "rgba(255, 255, 255, 0.12)",
     },
@@ -155,7 +155,7 @@ const theme = createTheme({
           transition: "all 0.2s ease",
           "&:focus": {
             outline: "2px solid",
-            outlineColor: `${theme.palette.primary.main}80`,
+            outlineColor: alpha(theme.palette.primary.main, 0.5),
             outlineOffset: "2px",
           },
         }),
@@ -253,7 +253,7 @@ const theme = createTheme({
           boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
           transition: "all 0.3s ease",
           "&:hover": {
-            borderColor: `${theme.palette.primary.main}4D`,
+            borderColor: alpha(theme.palette.primary.main, 0.3),
             boxShadow: "0 8px 24px rgba(0, 0, 0, 0.2)",
             transform: "translateY(-2px)",
           },
@@ -299,24 +299,24 @@ const theme = createTheme({
           fontWeight: 500,
         },
         standardSuccess: ({ theme }) => ({
-          backgroundColor: `${theme.palette.success.main}1A`,
+          backgroundColor: alpha(theme.palette.success.main, 0.1),
           color: theme.palette.success.main,
-          border: `1px solid ${theme.palette.success.main}4D`,
+          border: `1px solid ${alpha(theme.palette.success.main, 0.3)}`,
         }),
         standardError: ({ theme }) => ({
-          backgroundColor: `${theme.palette.error.main}1A`,
+          backgroundColor: alpha(theme.palette.error.main, 0.1),
           color: theme.palette.error.main,
-          border: `1px solid ${theme.palette.error.main}4D`,
+          border: `1px solid ${alpha(theme.palette.error.main, 0.3)}`,
         }),
         standardWarning: ({ theme }) => ({
-          backgroundColor: `${theme.palette.warning.main}1A`,
+          backgroundColor: alpha(theme.palette.warning.main, 0.1),
           color: theme.palette.warning.main,
-          border: `1px solid ${theme.palette.warning.main}4D`,
+          border: `1px solid ${alpha(theme.palette.warning.main, 0.3)}`,
         }),
         standardInfo: ({ theme }) => ({
-          backgroundColor: `${theme.palette.info.main}1A`,
+          backgroundColor: alpha(theme.palette.info.main, 0.1),
           color: theme.palette.info.main,
-          border: `1px solid ${theme.palette.info.main}4D`,
+          border: `1px solid ${alpha(theme.palette.info.main, 0.3)}`,
         }),
       },
     },
@@ -378,7 +378,7 @@ const theme = createTheme({
           "&.Mui-selected": {
             backgroundColor: theme.palette.action.selected,
             "&:hover": {
-              backgroundColor: `${theme.palette.primary.main}33`,
+              backgroundColor: alpha(theme.palette.primary.main, 0.2),
             },
           },
         }),
