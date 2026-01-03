@@ -567,7 +567,7 @@ function ArchiveManager() {
       setWorkflowStatus("Analysis complete. Starting workflow execution...");
 
       // Token replacement utilities
-      const tokenRegex = /\{\{(\w+)\}\}/g;
+      const tokenRegex = /\{\{([^{}]+)\}\}/g;
       const tokensMap = new Map<string, MessageInfo>();
       const messagesWithTokens: Array<{
         threadId: string;
