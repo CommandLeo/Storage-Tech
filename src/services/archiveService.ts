@@ -1,4 +1,4 @@
-import type { ChannelInfo, MessageInfo } from "@/interfaces";
+import type { ChannelInfo, MessageInfo } from "@/types";
 
 // Get all available channels from config
 export async function getChannels() {

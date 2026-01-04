@@ -44,7 +44,7 @@ import {
   postToThread,
   editPost,
 } from "@/services/archiveService";
-import type { ChannelInfo, MessageInfo, Workflow, LogEntry } from "@/interfaces";
+import type { ChannelInfo, MessageInfo, Workflow, LogEntry } from "@/types";
 import { WorkflowAnalysisError } from "@/lib/errors";
 
 function ArchiveManager() {

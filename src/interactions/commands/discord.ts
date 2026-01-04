@@ -6,7 +6,7 @@ import {
   type APIChatInputApplicationCommandInteractionData,
 } from "@discordjs/core/http-only";
 import config from "@/lib/config";
-import { Command } from "@/interfaces";
+import { Command } from "@/types";
 
 const discordServers = config.discordServers;
 

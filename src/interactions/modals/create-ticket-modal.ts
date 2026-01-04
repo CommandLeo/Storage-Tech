@@ -2,7 +2,7 @@ import { MessageFlags } from "@discordjs/core/http-only";
 import { channelLink, roleMention } from "@discordjs/formatters";
 import { getRoleIdByName } from "@/lib/discordUtils";
 import discordApi from "@/lib/discordApi";
-import type { ModalExecutor } from "@/interfaces";
+import type { ModalExecutor } from "@/types";
 
 const modal: ModalExecutor = {
   custom_id: "create-ticket-modal",

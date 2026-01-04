@@ -1,5 +1,5 @@
 import { InteractionResponseType, ComponentType } from "@discordjs/core/http-only";
-import type { MessageComponentExecutor } from "@/interfaces";
+import type { MessageComponentExecutor } from "@/types";
 
 const button: MessageComponentExecutor = {
   custom_id: "create-ticket-button",

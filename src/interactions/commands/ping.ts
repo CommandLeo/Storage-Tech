@@ -1,5 +1,5 @@
 import { InteractionResponseType } from "@discordjs/core/http-only";
-import { Command } from "@/interfaces";
+import { Command } from "@/types";
 
 const command: Command = {
   data: {
