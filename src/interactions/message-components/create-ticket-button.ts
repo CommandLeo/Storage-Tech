@@ -8,7 +8,7 @@ const button: MessageComponentExecutor = {
       type: InteractionResponseType.Modal,
       data: {
         custom_id: "create-ticket-modal",
-        title: "Ticket Confirmation",
+        title: "Ticket Creation Confirmation",
         components: [
           {
             type: ComponentType.TextDisplay,

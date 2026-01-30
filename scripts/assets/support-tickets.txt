@@ -1,0 +1,9 @@
+Create a ticket if you want to talk privately to @Staff as a group.
+
+# ✅ You SHOULD create a ticket to:
+- Discuss requests that potentially include sensitive information
+- Report a discord user who is breaking the server rules, or is being disruptive
+
+# ❌ You SHOULDN'T create a ticket to:
+- Ask for Minecraft help, or any other form of general support
+- Report issues with designs in the archives

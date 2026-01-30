@@ -24,10 +24,21 @@ const modal: ModalExecutor = {
 
     const STAFF_ROLE_ID = await getRoleIdByName("Staff");
     if (STAFF_ROLE_ID) {
-      const introductionContent = "@Staff has been notified of your ticket.";
-      const message = await discordApi.channels.createMessage(ticketThread.id, { content: introductionContent });
+      const ticketNotificationMessage1 = "@Staff is being notified of your ticket.".replaceAll(
+        "@Staff",
+        roleMention(STAFF_ROLE_ID),
+      );
+      const ticketNotificationMessage2 = "@Staff has been notified of your ticket.".replaceAll(
+        "@Staff",
+        roleMention(STAFF_ROLE_ID),
+      );
+      const message = await discordApi.channels.createMessage(ticketThread.id, {
+        content: ticketNotificationMessage1,
+        allowed_mentions: { parse: [] },
+      });
       await discordApi.channels.editMessage(message.channel_id, message.id, {
-        content: introductionContent.replace("@Staff", roleMention(STAFF_ROLE_ID)),
+        content: ticketNotificationMessage2,
+        allowed_mentions: { roles: [STAFF_ROLE_ID] },
       });
     }
 
