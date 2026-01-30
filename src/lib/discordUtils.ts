@@ -32,7 +32,7 @@ export async function hasWhitelistedRole(discordId: string) {
 }
 
 export async function findForumChannel(channelName: string) {
-  const formattedName = `📁︱${channelName}`;
+  const formattedName = `📂︱${channelName}`;
   try {
     const channels = await discordApi.guilds.getChannels(guildId);
     const channel = channels.find(
