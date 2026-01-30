@@ -18,7 +18,7 @@ const transparentImageData =
 
 const guildId = process.env.GUILD_ID;
 
-const channelPrefix = "📁︱";
+const channelPrefix = "📂︱";
 
 function formatName(name: string) {
   return `${channelPrefix}${name}`;
